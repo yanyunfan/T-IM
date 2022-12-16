@@ -1,0 +1,14 @@
+# idea ignore
+.idea/
+*.iml
+
+# tmp ignore
+out/
+logs/
+*.log
+*.tmp
+
+
+# maven ignore
+target/
+.class
