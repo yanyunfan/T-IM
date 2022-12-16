@@ -3,6 +3,8 @@
 #### 介绍
 基于t-io的一个极简聊天室应用。
 
+![在这里插入图片描述](https://img-blog.csdnimg.cn/5d5419a9af8343f2bd1ff91f4e9f509a.png#pic_center)
+
 #### 软件架构
 
 #### 安装教程
