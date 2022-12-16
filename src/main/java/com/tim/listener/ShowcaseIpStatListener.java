@@ -13,51 +13,47 @@ import org.tio.utils.json.Json;
  * ShowcaseIpStatListener
  */
 public class ShowcaseIpStatListener implements IpStatListener {
-	@SuppressWarnings("unused")
-	private static Logger log = LoggerFactory.getLogger(ShowcaseIpStatListener.class);
+    @SuppressWarnings("unused")
+    private static Logger log = LoggerFactory.getLogger(ShowcaseIpStatListener.class);
 
-	public static final ShowcaseIpStatListener me = new ShowcaseIpStatListener();
+    public static final ShowcaseIpStatListener me = new ShowcaseIpStatListener();
 
-	/**
-	 * 
-	 */
-	private ShowcaseIpStatListener() {
-	}
+    private ShowcaseIpStatListener() {
+    }
 
-	@Override
-	public void onExpired(TioConfig tioConfig, IpStat ipStat) {
-		// 在这里把统计数据入库中或日志
-		log.info("可以把统计数据入库\r\n{}", Json.toFormatedJson(ipStat));
-	}
+    @Override
+    public void onExpired(TioConfig tioConfig, IpStat ipStat) {
+        log.debug("可以把统计数据入库\r\n{}", Json.toFormatedJson(ipStat));
+    }
 
-	@Override
-	public void onAfterConnected(ChannelContext channelContext, boolean isConnected, boolean isReconnect, IpStat ipStat) throws Exception {
-		// log.info("onAfterConnected\r\n{}", Json.toFormatedJson(ipStat));
-	}
+    @Override
+    public void onAfterConnected(ChannelContext channelContext, boolean isConnected, boolean isReconnect, IpStat ipStat) throws Exception {
+        log.debug("onAfterConnected\r\n{}", Json.toFormatedJson(ipStat));
+    }
 
-	@Override
-	public void onDecodeError(ChannelContext channelContext, IpStat ipStat) {
-		// log.info("onDecodeError\r\n{}", Json.toFormatedJson(ipStat));
-	}
+    @Override
+    public void onDecodeError(ChannelContext channelContext, IpStat ipStat) {
+        log.debug("onDecodeError\r\n{}", Json.toFormatedJson(ipStat));
+    }
 
-	@Override
-	public void onAfterSent(ChannelContext channelContext, Packet packet, boolean isSentSuccess, IpStat ipStat) throws Exception {
-		// log.info("onAfterSent\r\n{}\r\n{}", packet.logstr(), Json.toFormatedJson(ipStat));
-	}
+    @Override
+    public void onAfterSent(ChannelContext channelContext, Packet packet, boolean isSentSuccess, IpStat ipStat) throws Exception {
+        log.debug("onAfterSent\r\n{}\r\n{}", packet.logstr(), Json.toFormatedJson(ipStat));
+    }
 
-	@Override
-	public void onAfterDecoded(ChannelContext channelContext, Packet packet, int packetSize, IpStat ipStat) throws Exception {
-		// log.info("onAfterDecoded\r\n{}\r\n{}", packet.logstr(), Json.toFormatedJson(ipStat));
-	}
+    @Override
+    public void onAfterDecoded(ChannelContext channelContext, Packet packet, int packetSize, IpStat ipStat) throws Exception {
+        log.debug("onAfterDecoded\r\n{}\r\n{}", packet.logstr(), Json.toFormatedJson(ipStat));
+    }
 
-	@Override
-	public void onAfterReceivedBytes(ChannelContext channelContext, int receivedBytes, IpStat ipStat) throws Exception {
-		// log.info("onAfterReceivedBytes\r\n{}", Json.toFormatedJson(ipStat));
-	}
+    @Override
+    public void onAfterReceivedBytes(ChannelContext channelContext, int receivedBytes, IpStat ipStat) throws Exception {
+        log.debug("onAfterReceivedBytes\r\n{}", Json.toFormatedJson(ipStat));
+    }
 
-	@Override
-	public void onAfterHandled(ChannelContext channelContext, Packet packet, IpStat ipStat, long cost) throws Exception {
-		// log.info("onAfterHandled\r\n{}\r\n{}", packet.logstr(), Json.toFormatedJson(ipStat));
-	}
+    @Override
+    public void onAfterHandled(ChannelContext channelContext, Packet packet, IpStat ipStat, long cost) throws Exception {
+        log.debug("onAfterHandled\r\n{}\r\n{}", packet.logstr(), Json.toFormatedJson(ipStat));
+    }
 
 }
